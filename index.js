@@ -1,8 +1,12 @@
 import express from "express";
 import apiHandler from "./src/apiHandler.js";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
+
+const PORT = process.env.PORT || 3001;
 
 app.use(
   cors({
@@ -12,9 +16,8 @@ app.use(
 );
 
 app.options("*", cors());
-
-app.listen(process.env.PORT || 3000, function () {
-  console.log("server running on port 3000");
+app.listen(PORT, function () {
+  console.log(`server running on port ${PORT}`);
 });
 
 apiHandler(app);
