@@ -6,13 +6,21 @@
 // };
 
 import express from "express";
+import cors from "cors";
 
 const app = express();
 
-app.listen(443, () => {
-  console.log("listening");
-});
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
 
-app.get("/", (req, res) => {
-  res.send("hello!");
+app.options("*", cors());
+
+app.get("/", (req, res) => res.send("Working!!!"));
+
+app.listen(process.env.PORT || 3000, function () {
+  console.log("server running on port 3000", "");
 });
