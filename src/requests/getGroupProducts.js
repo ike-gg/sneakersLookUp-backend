@@ -9,9 +9,9 @@ export default (req, res) => {
   if ("q" in req.query) {
     const query = req.query.q;
     stockx
-      .getProduct(query, options)
-      .then((item) => {
-        res.json(item);
+      .getProductGroup(query)
+      .then((group) => {
+        res.json(group);
       })
       .catch((error) => {
         res.json(error);
