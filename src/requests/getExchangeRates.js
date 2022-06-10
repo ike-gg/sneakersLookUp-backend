@@ -1,7 +1,6 @@
 import { exchangeRates } from "exchange-rates-api";
 
 const supportedCurrencies = ["CHF", "EUR", "GBP", "PLN", "USD"];
-const emojisOfCurriences = ["🇨🇭", "🇪🇺", "🇬🇧", "🇵🇱", "🇺🇸"];
 
 export default (req, res) => {
   exchangeRates()
@@ -10,7 +9,7 @@ export default (req, res) => {
     .symbols(supportedCurrencies)
     .fetch()
     .then((rates) => {
-      res.json({ rates, emojisOfCurriences });
+      res.json(rates);
     })
     .catch((error) => {
       res.json(error);
