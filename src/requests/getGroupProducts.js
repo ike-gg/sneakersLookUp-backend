@@ -5,6 +5,12 @@ let options = getOptions()
   .then(() => console.log("successful get proxies for getGroupProducts"))
   .catch((error) => console.error(error));
 
+setInterval(() => {
+  options = getOptions()
+    .then(() => console.log("successful get proxies for getGroupProducts"))
+    .catch((error) => console.error(error));
+}, 1000 * 60 * 60);
+
 export default (req, res) => {
   if ("q" in req.query) {
     const query = req.query.q;
