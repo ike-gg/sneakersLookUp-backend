@@ -1,9 +1,9 @@
 import stockx from "stockx-scraper";
+import { getOptions } from "./stockXOptions.js";
 
-const options = {
-  currency: "EUR",
-  country: "US",
-};
+let options = getOptions()
+  .then(() => console.log("successful get proxies for getProduct"))
+  .catch((error) => console.error(error));
 
 export default (req, res) => {
   if ("q" in req.query) {
@@ -17,5 +17,7 @@ export default (req, res) => {
         res.json(error);
         console.error(error);
       });
+  } else {
+    res.json({ error: "no query provided" });
   }
 };
