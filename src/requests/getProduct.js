@@ -1,15 +1,9 @@
 import stockx from "stockx-scraper";
-import { getOptions } from "./stockXOptions.js";
 
-let options = getOptions()
-  .then(() => console.log("successful get proxies for getProduct"))
-  .catch((error) => console.error(error));
-
-setInterval(() => {
-  options = getOptions()
-    .then(() => console.log("successful exchanged proxies for getProduct"))
-    .catch((error) => console.error(error));
-}, 1000 * 60 * 60);
+const options = {
+  currency: `EUR`,
+  country: `US`,
+};
 
 export default (req, res) => {
   if ("q" in req.query) {
