@@ -1,9 +1,7 @@
 # SneakersLookUp (Backend)
 
-# 👉 [Check demo](https://ike-gg.github.io/sneakersLookUp-frontend/)
+# 👉 [Check demo app](https://ike-gg.github.io/sneakersLookUp-frontend/)
 
-## 👉 [Check app](https://github.com/ike-gg/sneakersLookUp-frontend)
+Used in [my sneakers app](https://github.com/ike-gg/sneakersLookUp-frontend).
 
-Take a look of project status [here](https://github.com/ike-gg/sneakersLookUp-frontend)
-
-Backend created for scrape data from StockX using [stockx-scraper](https://github.com/iyarsius/stockx-scraper)
+Backend created to scrape data from StockX using [stockx-scraper](https://github.com/iyarsius/stockx-scraper).
